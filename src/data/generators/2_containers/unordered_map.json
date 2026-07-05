@@ -1,0 +1,31 @@
+{
+  "id": "container-unordered-map",
+  "title": "unordered_map",
+  "category": "STL Containers",
+  "aliases": ["umap", "unordered_map", "hash map", "hash_map"],
+  "inputs": [
+    {
+      "id": "keyType",
+      "label": "Key Type (K)",
+      "type": "nested_type",
+      "default": "string"
+    },
+    {
+      "id": "valueType",
+      "label": "Value Type (V)",
+      "type": "nested_type",
+      "default": "int"
+    },
+    {
+      "id": "name",
+      "label": "Variable Name",
+      "type": "string",
+      "default": "umap",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    }
+  ],
+  "template": "unordered_map<{{keyType}}, {{valueType}}> {{name}};"
+}

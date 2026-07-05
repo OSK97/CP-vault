@@ -1,0 +1,47 @@
+{
+  "id": "syntax-function",
+  "title": "Function Declaration",
+  "category": "C++ Syntax Generator",
+  "aliases": ["func", "function", "method", "decl", "def", "inline"],
+  "inputs": [
+    {
+      "id": "retType",
+      "label": "Return Type",
+      "type": "nested_type",
+      "default": "void"
+    },
+    {
+      "id": "name",
+      "label": "Function Name",
+      "type": "string",
+      "default": "solve",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "parameters",
+      "label": "Parameters",
+      "type": "string",
+      "default": "int n, string s",
+      "placeholder": "e.g., int n, const string& s"
+    },
+    {
+      "id": "inline",
+      "label": "Inline?",
+      "type": "boolean",
+      "default": false
+    }
+  ],
+  "templates": [
+    {
+      "condition": "inline === true",
+      "value": "inline {{retType}} {{name}}({{parameters}}) {\n    // code\n}"
+    },
+    {
+      "condition": "inline === false",
+      "value": "{{retType}} {{name}}({{parameters}}) {\n    // code\n}"
+    }
+  ]
+}

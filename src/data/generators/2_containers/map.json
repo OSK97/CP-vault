@@ -1,0 +1,31 @@
+{
+  "id": "container-map",
+  "title": "map",
+  "category": "STL Containers",
+  "aliases": ["map", "ordered map", "tree map", "mp"],
+  "inputs": [
+    {
+      "id": "keyType",
+      "label": "Key Type (K)",
+      "type": "nested_type",
+      "default": "int"
+    },
+    {
+      "id": "valueType",
+      "label": "Value Type (V)",
+      "type": "nested_type",
+      "default": "int"
+    },
+    {
+      "id": "name",
+      "label": "Variable Name",
+      "type": "string",
+      "default": "mp",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    }
+  ],
+  "template": "map<{{keyType}}, {{valueType}}> {{name}};"
+}

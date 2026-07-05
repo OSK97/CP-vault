@@ -1,0 +1,68 @@
+{
+  "id": "syntax-array",
+  "title": "Raw Array Declaration",
+  "category": "C++ Syntax Generator",
+  "aliases": ["arr", "array", "static array", "matrix", "2d array", "1d array"],
+  "inputs": [
+    {
+      "id": "dataType",
+      "label": "Data Type",
+      "type": "nested_type",
+      "default": "int"
+    },
+    {
+      "id": "name",
+      "label": "Array Name",
+      "type": "string",
+      "default": "arr",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "dimensions",
+      "label": "Dimensions",
+      "type": "select",
+      "options": ["1D", "2D"],
+      "default": "1D"
+    },
+    {
+      "id": "size1",
+      "label": "Size (Dimension 1)",
+      "type": "string",
+      "default": "N"
+    },
+    {
+      "id": "size2",
+      "label": "Size (Dimension 2)",
+      "type": "string",
+      "default": "M",
+      "condition": "dimensions === '2D'"
+    },
+    {
+      "id": "initialize",
+      "label": "Zero Initialize?",
+      "type": "boolean",
+      "default": false
+    }
+  ],
+  "templates": [
+    {
+      "condition": "dimensions === '1D' && initialize === true",
+      "value": "{{dataType}} {{name}}[{{size1}}] = {};"
+    },
+    {
+      "condition": "dimensions === '1D' && initialize === false",
+      "value": "{{dataType}} {{name}}[{{size1}}];"
+    },
+    {
+      "condition": "dimensions === '2D' && initialize === true",
+      "value": "{{dataType}} {{name}}[{{size1}}][{{size2}}] = {};"
+    },
+    {
+      "condition": "dimensions === '2D' && initialize === false",
+      "value": "{{dataType}} {{name}}[{{size1}}][{{size2}}];"
+    }
+  ]
+}

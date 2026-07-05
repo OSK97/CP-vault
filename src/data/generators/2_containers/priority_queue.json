@@ -1,0 +1,41 @@
+{
+  "id": "container-priority-queue",
+  "title": "priority_queue",
+  "category": "STL Containers",
+  "aliases": ["pq", "heap", "min heap", "max heap"],
+  "inputs": [
+    {
+      "id": "dataType",
+      "label": "Data Type",
+      "type": "nested_type",
+      "default": "int"
+    },
+    {
+      "id": "name",
+      "label": "Variable Name",
+      "type": "string",
+      "default": "pq",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "heapType",
+      "label": "Heap Type",
+      "type": "select",
+      "options": ["Max Heap", "Min Heap"],
+      "default": "Max Heap"
+    }
+  ],
+  "templates": [
+    {
+      "condition": "heapType === 'Max Heap'",
+      "value": "priority_queue<{{dataType}}> {{name}};"
+    },
+    {
+      "condition": "heapType === 'Min Heap'",
+      "value": "priority_queue<{{dataType}}, vector<{{dataType}}>, greater<{{dataType}}>> {{name}};"
+    }
+  ]
+}

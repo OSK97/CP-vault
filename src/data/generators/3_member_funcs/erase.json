@@ -1,0 +1,67 @@
+{
+  "id": "member-erase",
+  "title": "erase",
+  "category": "STL Member Functions",
+  "aliases": ["erase", "remove", "delete", "clear element", "vec erase", "map erase"],
+  "inputs": [
+    {
+      "id": "containerType",
+      "label": "Container Type",
+      "type": "select",
+      "options": ["vector (by index)", "vector (range)", "set / map (by key)"],
+      "default": "vector (by index)"
+    },
+    {
+      "id": "containerName",
+      "label": "Variable Name",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "index",
+      "label": "Index to erase",
+      "type": "string",
+      "default": "i",
+      "condition": "containerType === 'vector (by index)'"
+    },
+    {
+      "id": "startIdx",
+      "label": "Start Index (inclusive)",
+      "type": "string",
+      "default": "l",
+      "condition": "containerType === 'vector (range)'"
+    },
+    {
+      "id": "endIdx",
+      "label": "End Index (exclusive)",
+      "type": "string",
+      "default": "r",
+      "condition": "containerType === 'vector (range)'"
+    },
+    {
+      "id": "key",
+      "label": "Key / Value to erase",
+      "type": "string",
+      "default": "x",
+      "condition": "containerType === 'set / map (by key)'"
+    }
+  ],
+  "templates": [
+    {
+      "condition": "containerType === 'vector (by index)'",
+      "value": "{{containerName}}.erase({{containerName}}.begin() + {{index}});"
+    },
+    {
+      "condition": "containerType === 'vector (range)'",
+      "value": "{{containerName}}.erase({{containerName}}.begin() + {{startIdx}}, {{containerName}}.begin() + {{endIdx}});"
+    },
+    {
+      "condition": "containerType === 'set / map (by key)'",
+      "value": "{{containerName}}.erase({{key}});"
+    }
+  ]
+}

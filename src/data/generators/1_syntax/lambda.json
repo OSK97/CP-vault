@@ -1,0 +1,71 @@
+{
+  "id": "syntax-lambda",
+  "title": "Lambda Function",
+  "category": "C++ Syntax Generator",
+  "aliases": ["lambda", "comparator", "dfs lambda", "anonymous function"],
+  "inputs": [
+    {
+      "id": "name",
+      "label": "Lambda Variable Name",
+      "type": "string",
+      "default": "dfs",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "capture",
+      "label": "Capture Clause",
+      "type": "select",
+      "options": ["& (by reference)", "= (by value)", "empty"],
+      "default": "& (by reference)"
+    },
+    {
+      "id": "parameters",
+      "label": "Parameters",
+      "type": "string",
+      "default": "int u, int p",
+      "placeholder": "e.g., int u, int p"
+    },
+    {
+      "id": "retType",
+      "label": "Return Type",
+      "type": "string",
+      "default": "void",
+      "placeholder": "e.g., void, bool, int"
+    },
+    {
+      "id": "isRecursive",
+      "label": "Is Recursive (DFS)?",
+      "type": "boolean",
+      "default": true
+    }
+  ],
+  "templates": [
+    {
+      "condition": "isRecursive === true && capture === '& (by reference)'",
+      "value": "auto {{name}} = [&](auto& self, {{parameters}}) -> {{retType}} {\n    // To recurse: self(self, next_u, u);\n};"
+    },
+    {
+      "condition": "isRecursive === true && capture === '= (by value)'",
+      "value": "auto {{name}} = [=](auto& self, {{parameters}}) -> {{retType}} {\n    // To recurse: self(self, next_u, u);\n};"
+    },
+    {
+      "condition": "isRecursive === true && capture === 'empty'",
+      "value": "auto {{name}} = [](auto& self, {{parameters}}) -> {{retType}} {\n    // To recurse: self(self, next_u, u);\n};"
+    },
+    {
+      "condition": "isRecursive === false && capture === '& (by reference)'",
+      "value": "auto {{name}} = [&]({{parameters}}) -> {{retType}} {\n    // code\n};"
+    },
+    {
+      "condition": "isRecursive === false && capture === '= (by value)'",
+      "value": "auto {{name}} = [=]({{parameters}}) -> {{retType}} {\n    // code\n};"
+    },
+    {
+      "condition": "isRecursive === false && capture === 'empty'",
+      "value": "auto {{name}} = []({{parameters}}) -> {{retType}} {\n    // code\n};"
+    }
+  ]
+}

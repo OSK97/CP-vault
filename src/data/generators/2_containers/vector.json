@@ -1,0 +1,70 @@
+{
+  "id": "container-vector",
+  "title": "vector",
+  "category": "STL Containers",
+  "aliases": ["vec", "vector", "dynamic array", "list"],
+  "inputs": [
+    {
+      "id": "dataType",
+      "label": "Data Type",
+      "type": "nested_type",
+      "default": "int"
+    },
+    {
+      "id": "name",
+      "label": "Variable Name",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "initType",
+      "label": "Initialization",
+      "type": "select",
+      "options": ["Empty", "With Size", "With Size and Value", "Initializer List"],
+      "default": "Empty"
+    },
+    {
+      "id": "size",
+      "label": "Size",
+      "type": "string",
+      "default": "n",
+      "condition": "initType === 'With Size' || initType === 'With Size and Value'"
+    },
+    {
+      "id": "defaultValue",
+      "label": "Default Value",
+      "type": "string",
+      "default": "0",
+      "condition": "initType === 'With Size and Value'"
+    },
+    {
+      "id": "elements",
+      "label": "Elements",
+      "type": "string",
+      "default": "1, 2, 3",
+      "condition": "initType === 'Initializer List'"
+    }
+  ],
+  "templates": [
+    {
+      "condition": "initType === 'Empty'",
+      "value": "vector<{{dataType}}> {{name}};"
+    },
+    {
+      "condition": "initType === 'With Size'",
+      "value": "vector<{{dataType}}> {{name}}({{size}});"
+    },
+    {
+      "condition": "initType === 'With Size and Value'",
+      "value": "vector<{{dataType}}> {{name}}({{size}}, {{defaultValue}});"
+    },
+    {
+      "condition": "initType === 'Initializer List'",
+      "value": "vector<{{dataType}}> {{name}} = { {{elements}} };"
+    }
+  ]
+}

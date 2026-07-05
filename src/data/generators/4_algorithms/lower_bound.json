@@ -1,0 +1,70 @@
+{
+  "id": "algorithm-binary-search-bounds",
+  "title": "lower_bound / upper_bound",
+  "category": "STL Algorithms",
+  "aliases": ["lower_bound", "upper_bound", "lb", "ub", "binary search bound", "binary_search"],
+  "inputs": [
+    {
+      "id": "boundType",
+      "label": "Bound Type",
+      "type": "select",
+      "options": ["lower_bound (>= x)", "upper_bound (> x)"],
+      "default": "lower_bound (>= x)"
+    },
+    {
+      "id": "containerName",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "targetValue",
+      "label": "Target Value (x)",
+      "type": "string",
+      "default": "x"
+    },
+    {
+      "id": "autoAssign",
+      "label": "Store as Iterator?",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "id": "getIndex",
+      "label": "Get Integer Index?",
+      "type": "boolean",
+      "default": false,
+      "condition": "autoAssign === true"
+    }
+  ],
+  "templates": [
+    {
+      "condition": "boundType === 'lower_bound (>= x)' && autoAssign === true && getIndex === true",
+      "value": "int idx = lower_bound({{containerName}}.begin(), {{containerName}}.end(), {{targetValue}}) - {{containerName}}.begin();"
+    },
+    {
+      "condition": "boundType === 'lower_bound (>= x)' && autoAssign === true && getIndex === false",
+      "value": "auto it = lower_bound({{containerName}}.begin(), {{containerName}}.end(), {{targetValue}});"
+    },
+    {
+      "condition": "boundType === 'lower_bound (>= x)' && autoAssign === false",
+      "value": "lower_bound({{containerName}}.begin(), {{containerName}}.end(), {{targetValue}})"
+    },
+    {
+      "condition": "boundType === 'upper_bound (> x)' && autoAssign === true && getIndex === true",
+      "value": "int idx = upper_bound({{containerName}}.begin(), {{containerName}}.end(), {{targetValue}}) - {{containerName}}.begin();"
+    },
+    {
+      "condition": "boundType === 'upper_bound (> x)' && autoAssign === true && getIndex === false",
+      "value": "auto it = upper_bound({{containerName}}.begin(), {{containerName}}.end(), {{targetValue}});"
+    },
+    {
+      "condition": "boundType === 'upper_bound (> x)' && autoAssign === false",
+      "value": "upper_bound({{containerName}}.begin(), {{containerName}}.end(), {{targetValue}})"
+    }
+  ]
+}

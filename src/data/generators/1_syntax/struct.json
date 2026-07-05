@@ -1,0 +1,55 @@
+{
+  "id": "syntax-struct",
+  "title": "Struct Definition",
+  "category": "C++ Syntax Generator",
+  "aliases": ["struct", "node", "class", "custom type", "record"],
+  "inputs": [
+    {
+      "id": "name",
+      "label": "Struct Name",
+      "type": "string",
+      "default": "Node",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "fields",
+      "label": "Fields (semicolon-separated)",
+      "type": "string",
+      "default": "int u, v; long long weight",
+      "placeholder": "e.g., int val; int lazy"
+    },
+    {
+      "id": "hasConstructor",
+      "label": "Include Constructor?",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "id": "constructorParams",
+      "label": "Constructor Parameters",
+      "type": "string",
+      "default": "int _u, int _v, long long _w",
+      "condition": "hasConstructor === true"
+    },
+    {
+      "id": "constructorInit",
+      "label": "Initializer List",
+      "type": "string",
+      "default": "u(_u), v(_v), weight(_w)",
+      "condition": "hasConstructor === true"
+    }
+  ],
+  "templates": [
+    {
+      "condition": "hasConstructor === true",
+      "value": "struct {{name}} {\n    {{fields}};\n\n    {{name}}({{constructorParams}}) : {{constructorInit}} {}\n};"
+    },
+    {
+      "condition": "hasConstructor === false",
+      "value": "struct {{name}} {\n    {{fields}};\n};"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "id": "algorithm-sort",
+  "title": "sort",
+  "category": "STL Algorithms",
+  "aliases": ["sort", "sorting", "ascending", "descending", "order"],
+  "inputs": [
+    {
+      "id": "containerName",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "sortOrder",
+      "label": "Order",
+      "type": "select",
+      "options": ["Ascending", "Descending (rbegin/rend)", "Descending (greater<T>)", "Custom Comparator"],
+      "default": "Ascending"
+    },
+    {
+      "id": "dataType",
+      "label": "Element Type (T)",
+      "type": "nested_type",
+      "default": "int",
+      "condition": "sortOrder === 'Descending (greater<T>)'"
+    },
+    {
+      "id": "comparator",
+      "label": "Comparator Function Name",
+      "type": "string",
+      "default": "cmp",
+      "condition": "sortOrder === 'Custom Comparator'"
+    }
+  ],
+  "templates": [
+    {
+      "condition": "sortOrder === 'Ascending'",
+      "value": "sort({{containerName}}.begin(), {{containerName}}.end());"
+    },
+    {
+      "condition": "sortOrder === 'Descending (rbegin/rend)'",
+      "value": "sort({{containerName}}.rbegin(), {{containerName}}.rend());"
+    },
+    {
+      "condition": "sortOrder === 'Descending (greater<T>)'",
+      "value": "sort({{containerName}}.begin(), {{containerName}}.end(), greater<{{dataType}}>());"
+    },
+    {
+      "condition": "sortOrder === 'Custom Comparator'",
+      "value": "sort({{containerName}}.begin(), {{containerName}}.end(), {{comparator}});"
+    }
+  ]
+}

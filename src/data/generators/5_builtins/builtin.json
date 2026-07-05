@@ -1,0 +1,54 @@
+{
+  "id": "builtin-gcc-bits",
+  "title": "GCC Bit Builtins",
+  "category": "Built-in C++ Functions",
+  "aliases": ["popcount", "clz", "ctz", "bits", "lead zero", "trail zero", "__builtin", "bitcount"],
+  "inputs": [
+    {
+      "id": "builtinType",
+      "label": "Builtin Function",
+      "type": "select",
+      "options": [
+        "__builtin_popcount (32-bit count)",
+        "__builtin_popcountll (64-bit count)",
+        "__builtin_clz (32-bit leading zeros)",
+        "__builtin_clzll (64-bit leading zeros)",
+        "__builtin_ctz (32-bit trailing zeros)",
+        "__builtin_ctzll (64-bit trailing zeros)"
+      ],
+      "default": "__builtin_popcount (32-bit count)"
+    },
+    {
+      "id": "value",
+      "label": "Input Value / Variable",
+      "type": "string",
+      "default": "x"
+    }
+  ],
+  "templates": [
+    {
+      "condition": "builtinType === '__builtin_popcount (32-bit count)'",
+      "value": "__builtin_popcount({{value}})"
+    },
+    {
+      "condition": "builtinType === '__builtin_popcountll (64-bit count)'",
+      "value": "__builtin_popcountll({{value}})"
+    },
+    {
+      "condition": "builtinType === '__builtin_clz (32-bit leading zeros)'",
+      "value": "__builtin_clz({{value}})"
+    },
+    {
+      "condition": "builtinType === '__builtin_clzll (64-bit leading zeros)'",
+      "value": "__builtin_clzll({{value}})"
+    },
+    {
+      "condition": "builtinType === '__builtin_ctz (32-bit trailing zeros)'",
+      "value": "__builtin_ctz({{value}})"
+    },
+    {
+      "condition": "builtinType === '__builtin_ctzll (64-bit trailing zeros)'",
+      "value": "__builtin_ctzll({{value}})"
+    }
+  ]
+}

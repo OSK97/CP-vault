@@ -1,0 +1,47 @@
+{
+  "id": "syntax-variable",
+  "title": "Variable Declaration",
+  "category": "C++ Syntax Generator",
+  "aliases": ["var", "variable", "decl", "declare", "init"],
+  "inputs": [
+    {
+      "id": "dataType",
+      "label": "Data Type",
+      "type": "nested_type",
+      "default": "int"
+    },
+    {
+      "id": "varName",
+      "label": "Variable Name",
+      "type": "string",
+      "default": "x",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "hasValue",
+      "label": "Initialize Value?",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "id": "initValue",
+      "label": "Initial Value",
+      "type": "string",
+      "default": "0",
+      "condition": "hasValue === true"
+    }
+  ],
+  "templates": [
+    {
+      "condition": "hasValue === true",
+      "value": "{{dataType}} {{varName}} = {{initValue}};"
+    },
+    {
+      "condition": "hasValue === false",
+      "value": "{{dataType}} {{varName}};"
+    }
+  ]
+}
