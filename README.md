@@ -32,9 +32,9 @@ SyntaxForge is designed as a **developer productivity tool**, not a documentatio
 - **Keyboard-first interface**: Navigate and generate code entirely from your keyboard
 - **Real-time search**: Instantly find generators by name or description
 - **Copy-ready code**: One-click copy of generated syntax
-- **Offline capable**: Works entirely in the browser
+- **Offline capable**: Runs locally in the browser without requiring any backend services
 - **Dark theme UI**: Comfortable for extended coding sessions
-- **No dependencies needed**: Clean, minimal interface
+- **No backend required**: Runs entirely in the browser with no server, database, or external APIs
 
 ## Getting Started
 
