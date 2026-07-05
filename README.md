@@ -8,6 +8,25 @@ SyntaxForge is an interactive web tool designed to speed up competitive programm
 
 Built for programmers competing on Codeforces, LeetCode, AtCoder, and similar platforms.
 
+## Why I Built SyntaxForge
+
+While practicing Competitive Programming on platforms like Codeforces, LeetCode, and AtCoder, I often found myself forgetting the exact syntax for STL containers, algorithms, and common C++ constructs.
+
+I usually knew **what** I wanted to use—a `priority_queue`, `lower_bound`, `accumulate`, or a nested `map<int, vector<pair<int, int>>>`—but not the precise syntax.
+
+Every time this happened, I had to leave my editor, open Google, search through cppreference or GeeksforGeeks, and then return to coding. Although each interruption lasted only a minute or two, it repeatedly broke my concentration and slowed down problem solving.
+
+I built **SyntaxForge** to eliminate those interruptions.
+
+Instead of searching documentation, I wanted a tool where I could:
+
+- Search any STL container, algorithm, or C++ construct instantly
+- Generate the required syntax by answering only the minimum number of questions
+- Copy the generated code with a single click
+- Return to solving the problem without breaking focus
+
+SyntaxForge is designed as a **developer productivity tool**, not a documentation website. Its goal is simple: **reduce the time between _"I know what I need"_ and _"I have the correct syntax copied into my editor."_**
+
 ## Features
 
 - **Keyboard-first interface**: Navigate and generate code entirely from your keyboard
