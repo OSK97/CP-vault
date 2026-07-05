@@ -103,24 +103,26 @@ export default function App() {
   return (
     <div className="flex flex-col min-h-screen bg-bg-primary text-text-primary">
       {/* Header section */}
-      <header className="flex flex-col items-center pt-8 pb-6 px-4 select-none">
+      <header className="w-full max-w-[1600px] mx-auto px-4 md:px-8 pt-6 pb-4 flex items-center justify-between select-none">
         <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-accent-purple/10 border border-accent-purple/20 text-accent-purple-light shadow-[0_0_15px_rgba(139,92,246,0.1)]">
-            <Terminal className="w-5.5 h-5.5" />
+          <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-accent-purple/10 border border-accent-purple/20 text-accent-purple-light shadow-[0_0_15px_rgba(139,92,246,0.1)]">
+            <Terminal className="w-4.5 h-4.5" />
           </div>
-          <h1 className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-text-primary via-accent-purple-light to-accent-cyan-light bg-clip-text text-transparent">
-            SyntaxForge
-          </h1>
+          <div>
+            <h1 className="text-xl font-extrabold tracking-tight bg-gradient-to-r from-text-primary via-accent-purple-light to-accent-cyan-light bg-clip-text text-transparent leading-none">
+              SyntaxForge
+            </h1>
+            <p className="text-[10px] text-text-secondary mt-1 font-medium tracking-wide">
+              The fastest C++ syntax generator for competitive programming
+            </p>
+          </div>
         </div>
-        <p className="text-xs text-text-secondary mt-2 tracking-wide font-medium">
-          The fastest way to generate correct C++ syntax
-        </p>
       </header>
 
       {/* Main dashboard body */}
-      <main className="flex-1 w-full max-w-7xl mx-auto px-4 md:px-6 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      <main className="flex-1 w-full max-w-[1600px] mx-auto px-4 md:px-8 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left Side: Search Omni-Box & List */}
-        <section className={`flex flex-col gap-4 transition-all duration-300 ${selectedGen ? 'lg:col-span-6 xl:col-span-5' : 'lg:col-span-12 max-w-4xl mx-auto w-full'}`}>
+        <section className={`flex flex-col gap-4 transition-all duration-300 ${selectedGen ? 'lg:col-span-5 xl:col-span-4' : 'lg:col-span-12 max-w-4xl mx-auto w-full'}`}>
           <SearchBar
             value={query}
             onChange={setQuery}
@@ -139,7 +141,7 @@ export default function App() {
 
         {/* Right Side: Active Form Generator Details */}
         {selectedGen ? (
-          <section className="lg:col-span-6 xl:col-span-7 w-full h-full lg:sticky lg:top-6">
+          <section className="lg:col-span-7 xl:col-span-8 w-full h-full lg:sticky lg:top-6">
             <GeneratorLayout
               generator={selectedGen}
               onClose={() => setSelectedGen(null)}

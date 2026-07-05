@@ -1,0 +1,25 @@
+{
+  "id": "algorithm-distance",
+  "title": "distance",
+  "category": "STL Algorithms (Ranges)",
+  "aliases": [
+    "distance",
+    "iterator difference",
+    "length between"
+  ],
+  "inputs": [
+    {
+      "id": "it1",
+      "label": "Start Iterator",
+      "type": "string",
+      "default": "v.begin()"
+    },
+    {
+      "id": "it2",
+      "label": "End Iterator",
+      "type": "string",
+      "default": "it"
+    }
+  ],
+  "template": "auto dist = distance({{it1}}, {{it2}});"
+}

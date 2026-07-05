@@ -1,0 +1,28 @@
+{
+  "id": "algorithm-shuffle",
+  "title": "shuffle",
+  "category": "STL Algorithms (Permutations)",
+  "aliases": [
+    "shuffle",
+    "randomize"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "rng",
+      "label": "Random Number Generator Engine",
+      "type": "string",
+      "default": "rng"
+    }
+  ],
+  "template": "shuffle({{container}}.begin(), {{container}}.end(), {{rng}});"
+}

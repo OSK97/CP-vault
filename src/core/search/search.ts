@@ -8,7 +8,7 @@ export interface SearchResult {
 // Map common short-hands to standard terms
 export const ALIAS_MAP: Record<string, string[]> = {
   'pq': ['priority_queue', 'heap'],
-  'heap': ['priority_queue'],
+  'heap': ['priority_queue', 'make_heap', 'push_heap', 'pop_heap', 'sort_heap'],
   'vec': ['vector'],
   'map': ['ordered map'],
   'hash map': ['unordered_map'],
@@ -19,7 +19,10 @@ export const ALIAS_MAP: Record<string, string[]> = {
   'ub': ['upper_bound'],
   'adj_list': ['vector', 'vector vector'],
   'min heap': ['priority_queue'],
-  'max heap': ['priority_queue']
+  'max heap': ['priority_queue'],
+  'sum': ['accumulate', 'reduce', 'partial_sum'],
+  'perm': ['next_permutation', 'prev_permutation'],
+  'unique': ['unique', 'unique_copy', 'erase-remove idiom']
 };
 
 /**

@@ -1,0 +1,23 @@
+{
+  "id": "algorithm-end",
+  "title": "end",
+  "category": "STL Algorithms (Ranges)",
+  "aliases": [
+    "end",
+    "std::end",
+    "iterator boundary"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    }
+  ],
+  "template": "end({{container}})"
+}

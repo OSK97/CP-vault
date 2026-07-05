@@ -1,0 +1,24 @@
+{
+  "id": "algorithm-swap",
+  "title": "swap",
+  "category": "STL Algorithms (Modification)",
+  "aliases": [
+    "swap",
+    "interchange"
+  ],
+  "inputs": [
+    {
+      "id": "v1",
+      "label": "Variable A",
+      "type": "string",
+      "default": "a"
+    },
+    {
+      "id": "v2",
+      "label": "Variable B",
+      "type": "string",
+      "default": "b"
+    }
+  ],
+  "template": "swap({{v1}}, {{v2}});"
+}

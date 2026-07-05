@@ -1,0 +1,32 @@
+{
+  "id": "algorithm-find-end",
+  "title": "find_end",
+  "category": "STL Algorithms (Searching)",
+  "aliases": [
+    "find_end",
+    "find last subsequence"
+  ],
+  "inputs": [
+    {
+      "id": "c1",
+      "label": "Source Container",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "c2",
+      "label": "Subsequence Container",
+      "type": "string",
+      "default": "s",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    }
+  ],
+  "template": "auto it = find_end({{c1}}.begin(), {{c1}}.end(), {{c2}}.begin(), {{c2}}.end());"
+}

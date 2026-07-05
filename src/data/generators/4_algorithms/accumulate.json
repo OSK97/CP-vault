@@ -1,0 +1,31 @@
+{
+  "id": "algorithm-accumulate",
+  "title": "accumulate",
+  "category": "STL Algorithms (Numeric)",
+  "aliases": [
+    "sum",
+    "total",
+    "accumulate",
+    "numeric",
+    "sum value"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "init",
+      "label": "Initial Value (and type)",
+      "type": "string",
+      "default": "0LL"
+    }
+  ],
+  "template": "auto sum = accumulate({{container}}.begin(), {{container}}.end(), {{init}});"
+}

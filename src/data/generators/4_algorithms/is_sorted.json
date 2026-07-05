@@ -1,0 +1,22 @@
+{
+  "id": "algorithm-is-sorted",
+  "title": "is_sorted",
+  "category": "STL Algorithms (Sorting)",
+  "aliases": [
+    "is_sorted",
+    "check sort"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    }
+  ],
+  "template": "bool sorted = is_sorted({{container}}.begin(), {{container}}.end());"
+}

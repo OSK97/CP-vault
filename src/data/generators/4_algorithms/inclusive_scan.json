@@ -1,0 +1,32 @@
+{
+  "id": "algorithm-inclusive-scan",
+  "title": "inclusive_scan",
+  "category": "STL Algorithms (Numeric)",
+  "aliases": [
+    "inclusive scan",
+    "prefix scan"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Source Container",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "result",
+      "label": "Destination Container",
+      "type": "string",
+      "default": "pref",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    }
+  ],
+  "template": "inclusive_scan({{container}}.begin(), {{container}}.end(), {{result}}.begin());"
+}

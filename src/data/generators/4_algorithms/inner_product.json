@@ -1,0 +1,39 @@
+{
+  "id": "algorithm-inner-product",
+  "title": "inner_product",
+  "category": "STL Algorithms (Numeric)",
+  "aliases": [
+    "inner product",
+    "dot product",
+    "product sum"
+  ],
+  "inputs": [
+    {
+      "id": "c1",
+      "label": "Container 1 (Source)",
+      "type": "string",
+      "default": "v1",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "c2",
+      "label": "Container 2 (Source)",
+      "type": "string",
+      "default": "v2",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "init",
+      "label": "Initial Value",
+      "type": "string",
+      "default": "0"
+    }
+  ],
+  "template": "auto dot_prod = inner_product({{c1}}.begin(), {{c1}}.end(), {{c2}}.begin(), {{init}});"
+}

@@ -1,0 +1,59 @@
+{
+  "id": "algorithm-erase-remove-idiom",
+  "title": "erase-remove idiom",
+  "category": "STL Algorithms (Removal)",
+  "aliases": [
+    "erase-remove",
+    "erase",
+    "remove",
+    "unique",
+    "distinct",
+    "erase remove idiom"
+  ],
+  "inputs": [
+    {
+      "id": "mode",
+      "label": "Removal Criteria",
+      "type": "select",
+      "options": [
+        "Specific Value",
+        "Conditional Predicate"
+      ],
+      "default": "Specific Value"
+    },
+    {
+      "id": "container",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "value",
+      "label": "Target Value to Remove",
+      "type": "string",
+      "default": "x",
+      "condition": "mode === 'Specific Value'"
+    },
+    {
+      "id": "predicate",
+      "label": "Predicate Function / Lambda",
+      "type": "string",
+      "default": "[](int x) { return x % 2 == 0; }",
+      "condition": "mode === 'Conditional Predicate'"
+    }
+  ],
+  "templates": [
+    {
+      "condition": "mode === 'Specific Value'",
+      "value": "{{container}}.erase(remove({{container}}.begin(), {{container}}.end(), {{value}}), {{container}}.end());"
+    },
+    {
+      "condition": "mode === 'Conditional Predicate'",
+      "value": "{{container}}.erase(remove_if({{container}}.begin(), {{container}}.end(), {{predicate}}), {{container}}.end());"
+    }
+  ]
+}

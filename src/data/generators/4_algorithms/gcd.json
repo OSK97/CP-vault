@@ -1,0 +1,25 @@
+{
+  "id": "algorithm-gcd",
+  "title": "gcd",
+  "category": "STL Algorithms (Numeric)",
+  "aliases": [
+    "gcd",
+    "greatest common divisor",
+    "math"
+  ],
+  "inputs": [
+    {
+      "id": "v1",
+      "label": "Value A",
+      "type": "string",
+      "default": "a"
+    },
+    {
+      "id": "v2",
+      "label": "Value B",
+      "type": "string",
+      "default": "b"
+    }
+  ],
+  "template": "auto val = std::gcd({{v1}}, {{v2}});"
+}

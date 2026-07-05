@@ -1,0 +1,31 @@
+{
+  "id": "algorithm-nth-element",
+  "title": "nth_element",
+  "category": "STL Algorithms (Sorting)",
+  "aliases": [
+    "nth_element",
+    "median",
+    "kth smallest",
+    "quickselect",
+    "perm"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "nth",
+      "label": "K-th Element Index",
+      "type": "string",
+      "default": "k"
+    }
+  ],
+  "template": "nth_element({{container}}.begin(), {{container}}.begin() + {{nth}}, {{container}}.end());"
+}

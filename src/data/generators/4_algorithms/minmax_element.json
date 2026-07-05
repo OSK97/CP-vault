@@ -1,0 +1,22 @@
+{
+  "id": "algorithm-minmax-element",
+  "title": "minmax_element",
+  "category": "STL Algorithms (Min/Max)",
+  "aliases": [
+    "minmax_element",
+    "both smallest largest iterators"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    }
+  ],
+  "template": "auto [min_it, max_it] = minmax_element({{container}}.begin(), {{container}}.end());"
+}

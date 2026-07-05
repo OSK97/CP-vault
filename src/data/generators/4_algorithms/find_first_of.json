@@ -1,0 +1,32 @@
+{
+  "id": "algorithm-find-first-of",
+  "title": "find_first_of",
+  "category": "STL Algorithms (Searching)",
+  "aliases": [
+    "find_first_of",
+    "first match in targets"
+  ],
+  "inputs": [
+    {
+      "id": "c1",
+      "label": "Source Container",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "c2",
+      "label": "Targets Container",
+      "type": "string",
+      "default": "targets",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    }
+  ],
+  "template": "auto it = find_first_of({{c1}}.begin(), {{c1}}.end(), {{c2}}.begin(), {{c2}}.end());"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "algorithm-remove-copy",
+  "title": "remove_copy",
+  "category": "STL Algorithms (Removal)",
+  "aliases": [
+    "remove_copy",
+    "copy without value"
+  ],
+  "inputs": [
+    {
+      "id": "source",
+      "label": "Source Container",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "dest",
+      "label": "Destination Container/Iterator",
+      "type": "string",
+      "default": "res",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "value",
+      "label": "Target Value to Exclude",
+      "type": "string",
+      "default": "x"
+    }
+  ],
+  "template": "remove_copy({{source}}.begin(), {{source}}.end(), {{dest}}.begin(), {{value}});"
+}

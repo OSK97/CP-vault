@@ -1,0 +1,32 @@
+{
+  "id": "algorithm-swap-ranges",
+  "title": "swap_ranges",
+  "category": "STL Algorithms (Modification)",
+  "aliases": [
+    "swap_ranges",
+    "swap two ranges"
+  ],
+  "inputs": [
+    {
+      "id": "c1",
+      "label": "Container 1",
+      "type": "string",
+      "default": "v1",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "c2",
+      "label": "Container 2 (Destination)",
+      "type": "string",
+      "default": "v2",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    }
+  ],
+  "template": "swap_ranges({{c1}}.begin(), {{c1}}.end(), {{c2}}.begin());"
+}

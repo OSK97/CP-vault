@@ -1,0 +1,28 @@
+{
+  "id": "algorithm-stable-partition",
+  "title": "stable_partition",
+  "category": "STL Algorithms (Sorting)",
+  "aliases": [
+    "stable_partition",
+    "partition preserving order"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "predicate",
+      "label": "Predicate Function / Lambda",
+      "type": "string",
+      "default": "[](int x) { return x % 2 == 0; }"
+    }
+  ],
+  "template": "auto boundary = stable_partition({{container}}.begin(), {{container}}.end(), {{predicate}});"
+}

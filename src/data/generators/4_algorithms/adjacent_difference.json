@@ -1,0 +1,32 @@
+{
+  "id": "algorithm-adjacent-difference",
+  "title": "adjacent_difference",
+  "category": "STL Algorithms (Numeric)",
+  "aliases": [
+    "adjacent difference",
+    "difference differences"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Source Container",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "result",
+      "label": "Destination Container",
+      "type": "string",
+      "default": "diff",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    }
+  ],
+  "template": "adjacent_difference({{container}}.begin(), {{container}}.end(), {{result}}.begin());"
+}

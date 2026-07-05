@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import type { GeneratorSchema } from '../../core/generator/types';
 import { FormField } from './FormField';
 import { CodeOutput } from './CodeOutput';
@@ -30,14 +30,14 @@ export const GeneratorLayout: React.FC<GeneratorLayoutProps> = ({ generator, onC
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   // Initialize values when the generator changes or is reset
-  const initValues = () => {
+  const initValues = useCallback(() => {
     setValues(getInitialValues(generator));
     setErrors({});
-  };
+  }, [generator]);
 
   useEffect(() => {
     initValues();
-  }, [generator.id]);
+  }, [generator.id, initValues]);
 
 
   // Handle a single field value change
@@ -76,18 +76,18 @@ export const GeneratorLayout: React.FC<GeneratorLayoutProps> = ({ generator, onC
   });
 
   return (
-    <div className="flex flex-col gap-6 w-full h-full bg-bg-secondary/40 border border-border-dark rounded-xl p-5 lg:p-6 backdrop-blur-md">
+    <div className="flex flex-col gap-4.5 w-full bg-bg-secondary/90 border border-border-dark rounded-xl p-5 shadow-2xl lg:max-h-[calc(100vh-120px)]">
       {/* Title Header */}
-      <div className="flex items-center justify-between border-b border-border-dark/60 pb-4 select-none">
+      <div className="flex items-center justify-between border-b border-border-dark/60 pb-3 select-none">
         <div className="flex items-center gap-2.5">
           <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-accent-purple/10 border border-accent-purple/20 text-accent-purple-light">
             <Sparkles className="w-4 h-4" />
           </div>
           <div>
-            <h2 className="text-lg font-bold text-text-primary leading-tight">
+            <h2 className="text-base font-bold text-text-primary leading-tight">
               {generator.title}
             </h2>
-            <p className="text-xs text-text-secondary">
+            <p className="text-[10px] text-text-secondary mt-0.5">
               {generator.category}
             </p>
           </div>
@@ -95,15 +95,23 @@ export const GeneratorLayout: React.FC<GeneratorLayoutProps> = ({ generator, onC
         
         <button
           onClick={onClose}
-          className="p-1.5 rounded-md hover:bg-bg-tertiary border border-transparent hover:border-border-dark text-text-secondary hover:text-text-primary transition cursor-pointer"
+          className="p-1.5 rounded-md hover:bg-bg-tertiary border border-transparent hover:border-border-dark text-text-secondary hover:text-text-primary transition cursor-pointer focus-ring"
           title="Close panel (Esc)"
         >
           <X className="w-4.5 h-4.5" />
         </button>
       </div>
 
-      {/* Inputs Form */}
-      <div className="flex flex-col gap-5 overflow-y-auto max-h-[calc(100vh-380px)] pr-2">
+      {/* Code output display (Live Preview) - Prominent, at the top */}
+      <div className="shrink-0">
+        <CodeOutput
+          code={compiledCode}
+          onReset={initValues}
+        />
+      </div>
+
+      {/* Inputs Form - Scrollable underneath the preview */}
+      <div className="flex-1 flex flex-col gap-4.5 overflow-y-auto pr-1 pb-2">
         {generator.inputs.map((input) => {
           // Check if field condition is met
           if (input.condition && !evaluateCondition(input.condition, values)) {
@@ -120,14 +128,6 @@ export const GeneratorLayout: React.FC<GeneratorLayoutProps> = ({ generator, onC
             />
           );
         })}
-      </div>
-
-      {/* Code output display */}
-      <div className="border-t border-border-dark/60 pt-5 mt-auto">
-        <CodeOutput
-          code={compiledCode}
-          onReset={initValues}
-        />
       </div>
     </div>
   );

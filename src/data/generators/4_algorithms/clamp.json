@@ -1,0 +1,30 @@
+{
+  "id": "algorithm-clamp",
+  "title": "clamp",
+  "category": "STL Algorithms (Min/Max)",
+  "aliases": [
+    "clamp",
+    "boundary restrict"
+  ],
+  "inputs": [
+    {
+      "id": "val",
+      "label": "Target Value",
+      "type": "string",
+      "default": "x"
+    },
+    {
+      "id": "lo",
+      "label": "Lower Bound (Min Allowed)",
+      "type": "string",
+      "default": "0"
+    },
+    {
+      "id": "hi",
+      "label": "Upper Bound (Max Allowed)",
+      "type": "string",
+      "default": "N"
+    }
+  ],
+  "template": "auto val = std::clamp({{val}}, {{lo}}, {{hi}});"
+}

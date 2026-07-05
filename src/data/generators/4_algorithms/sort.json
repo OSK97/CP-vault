@@ -1,8 +1,14 @@
 {
   "id": "algorithm-sort",
   "title": "sort",
-  "category": "STL Algorithms",
-  "aliases": ["sort", "sorting", "ascending", "descending", "order"],
+  "category": "STL Algorithms (Sorting)",
+  "aliases": [
+    "sort",
+    "sorting",
+    "ascending",
+    "descending",
+    "order"
+  ],
   "inputs": [
     {
       "id": "containerName",
@@ -18,7 +24,12 @@
       "id": "sortOrder",
       "label": "Order",
       "type": "select",
-      "options": ["Ascending", "Descending (rbegin/rend)", "Descending (greater<T>)", "Custom Comparator"],
+      "options": [
+        "Ascending",
+        "Descending (rbegin/rend)",
+        "Descending (greater<T>)",
+        "Custom Comparator"
+      ],
       "default": "Ascending"
     },
     {

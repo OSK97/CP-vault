@@ -1,0 +1,28 @@
+{
+  "id": "algorithm-none-of",
+  "title": "none_of",
+  "category": "STL Algorithms (Counting)",
+  "aliases": [
+    "none_of",
+    "none matching"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "predicate",
+      "label": "Predicate Function / Lambda",
+      "type": "string",
+      "default": "[](int x) { return x < 0; }"
+    }
+  ],
+  "template": "bool none = none_of({{container}}.begin(), {{container}}.end(), {{predicate}});"
+}

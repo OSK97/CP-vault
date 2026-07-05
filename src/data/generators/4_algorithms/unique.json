@@ -1,0 +1,23 @@
+{
+  "id": "algorithm-unique",
+  "title": "unique",
+  "category": "STL Algorithms (Removal)",
+  "aliases": [
+    "unique",
+    "distinct",
+    "remove duplicates consecutive"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    }
+  ],
+  "template": "auto new_end = unique({{container}}.begin(), {{container}}.end());"
+}

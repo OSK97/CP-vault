@@ -1,0 +1,25 @@
+{
+  "id": "algorithm-lcm",
+  "title": "lcm",
+  "category": "STL Algorithms (Numeric)",
+  "aliases": [
+    "lcm",
+    "least common multiple",
+    "math"
+  ],
+  "inputs": [
+    {
+      "id": "v1",
+      "label": "Value A",
+      "type": "string",
+      "default": "a"
+    },
+    {
+      "id": "v2",
+      "label": "Value B",
+      "type": "string",
+      "default": "b"
+    }
+  ],
+  "template": "auto val = std::lcm({{v1}}, {{v2}});"
+}

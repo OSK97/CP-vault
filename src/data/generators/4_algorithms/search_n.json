@@ -1,13 +1,11 @@
 {
-  "id": "algorithm-lower-bound",
-  "title": "lower_bound",
-  "category": "STL Algorithms (Binary Search)",
+  "id": "algorithm-search-n",
+  "title": "search_n",
+  "category": "STL Algorithms (Searching)",
   "aliases": [
-    "lb",
-    "lower bound",
-    "binary search",
-    "first greater or equal",
-    "search"
+    "search_n",
+    "find consecutive",
+    "consecutive count"
   ],
   "inputs": [
     {
@@ -21,11 +19,17 @@
       }
     },
     {
+      "id": "count",
+      "label": "Consecutive Count",
+      "type": "string",
+      "default": "n"
+    },
+    {
       "id": "value",
       "label": "Target Value",
       "type": "string",
       "default": "x"
     }
   ],
-  "template": "auto it = lower_bound({{container}}.begin(), {{container}}.end(), {{value}});"
+  "template": "auto it = search_n({{container}}.begin(), {{container}}.end(), {{count}}, {{value}});"
 }

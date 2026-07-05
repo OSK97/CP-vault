@@ -1,0 +1,36 @@
+{
+  "id": "algorithm-for-each-n",
+  "title": "for_each_n",
+  "category": "STL Algorithms (Ranges)",
+  "aliases": [
+    "for_each_n",
+    "iterate n elements",
+    "loop count",
+    "for each n"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "count",
+      "label": "Element Count",
+      "type": "string",
+      "default": "n"
+    },
+    {
+      "id": "lambda",
+      "label": "Lambda Operation / Function",
+      "type": "string",
+      "default": "[](auto& x) { cout << x << ' '; }"
+    }
+  ],
+  "template": "for_each_n({{container}}.begin(), {{count}}, {{lambda}});"
+}
