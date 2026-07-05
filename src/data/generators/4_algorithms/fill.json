@@ -1,13 +1,10 @@
 {
-  "id": "algorithm-lower-bound",
-  "title": "lower_bound",
-  "category": "STL Algorithms (Binary Search)",
+  "id": "algorithm-fill",
+  "title": "fill",
+  "category": "STL Algorithms (Modification)",
   "aliases": [
-    "lb",
-    "lower bound",
-    "binary search",
-    "first greater or equal",
-    "search"
+    "fill",
+    "initialize all"
   ],
   "inputs": [
     {
@@ -22,10 +19,10 @@
     },
     {
       "id": "value",
-      "label": "Target Value",
+      "label": "Fill Value",
       "type": "string",
-      "default": "x"
+      "default": "0"
     }
   ],
-  "template": "auto it = lower_bound({{container}}.begin(), {{container}}.end(), {{value}});"
+  "template": "fill({{container}}.begin(), {{container}}.end(), {{value}});"
 }

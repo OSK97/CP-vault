@@ -1,0 +1,28 @@
+{
+  "id": "algorithm-generate",
+  "title": "generate",
+  "category": "STL Algorithms (Modification)",
+  "aliases": [
+    "generate",
+    "fill generated values"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "generator",
+      "label": "Generator Function / Lambda",
+      "type": "string",
+      "default": "rand"
+    }
+  ],
+  "template": "generate({{container}}.begin(), {{container}}.end(), {{generator}});"
+}

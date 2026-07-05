@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Clipboard, Check, RotateCcw } from 'lucide-react';
 
 interface CodeOutputProps {
@@ -9,7 +9,7 @@ interface CodeOutputProps {
 export const CodeOutput: React.FC<CodeOutputProps> = ({ code, onReset }) => {
   const [copied, setCopied] = useState(false);
 
-  const handleCopy = async () => {
+  const handleCopy = useCallback(async () => {
     if (!code) return;
     try {
       await navigator.clipboard.writeText(code);
@@ -17,7 +17,7 @@ export const CodeOutput: React.FC<CodeOutputProps> = ({ code, onReset }) => {
     } catch (err) {
       console.error('Failed to copy to clipboard:', err);
     }
-  };
+  }, [code]);
 
   useEffect(() => {
     if (copied) {
@@ -45,7 +45,7 @@ export const CodeOutput: React.FC<CodeOutputProps> = ({ code, onReset }) => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [code]);
+  }, [code, handleCopy]);
 
   return (
     <div className="flex flex-col gap-3 w-full">
@@ -80,7 +80,7 @@ export const CodeOutput: React.FC<CodeOutputProps> = ({ code, onReset }) => {
 
         {/* Code Block */}
         <div className="p-4 overflow-x-auto min-h-[70px]">
-          <pre className="font-mono text-sm text-text-primary whitespace-pre-wrap break-all select-all leading-relaxed">
+          <pre className="font-mono text-base text-text-primary whitespace-pre-wrap break-all select-all leading-relaxed">
             {code || '// Configure fields to generate syntax'}
           </pre>
         </div>

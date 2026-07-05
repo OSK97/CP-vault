@@ -1,0 +1,22 @@
+{
+  "id": "algorithm-adjacent-find",
+  "title": "adjacent_find",
+  "category": "STL Algorithms (Searching)",
+  "aliases": [
+    "adjacent_find",
+    "consecutive duplicate"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    }
+  ],
+  "template": "auto it = adjacent_find({{container}}.begin(), {{container}}.end());"
+}

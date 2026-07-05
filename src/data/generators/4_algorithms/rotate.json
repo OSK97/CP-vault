@@ -1,0 +1,28 @@
+{
+  "id": "algorithm-rotate",
+  "title": "rotate",
+  "category": "STL Algorithms (Permutations)",
+  "aliases": [
+    "rotate",
+    "shift pivot"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "middle",
+      "label": "Shift/Pivot Offset (from begin)",
+      "type": "string",
+      "default": "k"
+    }
+  ],
+  "template": "rotate({{container}}.begin(), {{container}}.begin() + {{middle}}, {{container}}.end());"
+}

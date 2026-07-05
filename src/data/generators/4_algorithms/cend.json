@@ -1,0 +1,23 @@
+{
+  "id": "algorithm-cend",
+  "title": "cend",
+  "category": "STL Algorithms (Ranges)",
+  "aliases": [
+    "cend",
+    "std::cend",
+    "iterator boundary"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    }
+  ],
+  "template": "cend({{container}})"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "algorithm-for-each",
+  "title": "for_each",
+  "category": "STL Algorithms (Ranges)",
+  "aliases": [
+    "for_each",
+    "iterate elements",
+    "loop",
+    "for each"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "lambda",
+      "label": "Lambda Operation / Function",
+      "type": "string",
+      "default": "[](auto& x) { cout << x << ' '; }"
+    }
+  ],
+  "template": "for_each({{container}}.begin(), {{container}}.end(), {{lambda}});"
+}

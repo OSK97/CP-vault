@@ -1,0 +1,32 @@
+{
+  "id": "algorithm-copy-backward",
+  "title": "copy_backward",
+  "category": "STL Algorithms (Modification)",
+  "aliases": [
+    "copy_backward",
+    "copy reverse destination"
+  ],
+  "inputs": [
+    {
+      "id": "source",
+      "label": "Source Container",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "destEnd",
+      "label": "Destination End Iterator",
+      "type": "string",
+      "default": "res",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    }
+  ],
+  "template": "copy_backward({{source}}.begin(), {{source}}.end(), {{destEnd}}.end());"
+}

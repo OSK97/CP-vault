@@ -1,0 +1,53 @@
+{
+  "id": "algorithm-min",
+  "title": "min",
+  "category": "STL Algorithms (Min/Max)",
+  "aliases": [
+    "min",
+    "minimum",
+    "smallest"
+  ],
+  "inputs": [
+    {
+      "id": "type",
+      "label": "Input Mode",
+      "type": "select",
+      "options": [
+        "Two Values",
+        "Initializer List"
+      ],
+      "default": "Two Values"
+    },
+    {
+      "id": "a",
+      "label": "Value A",
+      "type": "string",
+      "default": "a",
+      "condition": "type === 'Two Values'"
+    },
+    {
+      "id": "b",
+      "label": "Value B",
+      "type": "string",
+      "default": "b",
+      "condition": "type === 'Two Values'"
+    },
+    {
+      "id": "list",
+      "label": "Comma Separated Values",
+      "type": "string",
+      "default": "a, b, c",
+      "condition": "type === 'Initializer List'"
+    }
+  ],
+  "templates": [
+    {
+      "condition": "type === 'Two Values'",
+      "value": "auto val = std::min({{a}}, {{b}});"
+    },
+    {
+      "condition": "type === 'Initializer List'",
+      "value": "auto val = std::min({ {{list}} });"
+    }
+  ]
+}

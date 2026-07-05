@@ -1,12 +1,11 @@
 {
-  "id": "algorithm-lower-bound",
-  "title": "lower_bound",
+  "id": "algorithm-binary-search",
+  "title": "binary_search",
   "category": "STL Algorithms (Binary Search)",
   "aliases": [
-    "lb",
-    "lower bound",
     "binary search",
-    "first greater or equal",
+    "bs",
+    "exists",
     "search"
   ],
   "inputs": [
@@ -27,5 +26,5 @@
       "default": "x"
     }
   ],
-  "template": "auto it = lower_bound({{container}}.begin(), {{container}}.end(), {{value}});"
+  "template": "bool found = binary_search({{container}}.begin(), {{container}}.end(), {{value}});"
 }

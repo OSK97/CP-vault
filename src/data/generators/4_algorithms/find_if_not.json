@@ -1,0 +1,28 @@
+{
+  "id": "algorithm-find-if-not",
+  "title": "find_if_not",
+  "category": "STL Algorithms (Searching)",
+  "aliases": [
+    "find_if_not",
+    "find not matching"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "predicate",
+      "label": "Predicate Function / Lambda",
+      "type": "string",
+      "default": "[](int x) { return x > 0; }"
+    }
+  ],
+  "template": "auto it = find_if_not({{container}}.begin(), {{container}}.end(), {{predicate}});"
+}

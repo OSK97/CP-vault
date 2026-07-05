@@ -1,0 +1,28 @@
+{
+  "id": "algorithm-remove-if",
+  "title": "remove_if",
+  "category": "STL Algorithms (Removal)",
+  "aliases": [
+    "remove_if",
+    "remove matching"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "predicate",
+      "label": "Predicate Function / Lambda",
+      "type": "string",
+      "default": "[](int x) { return x % 2 == 0; }"
+    }
+  ],
+  "template": "auto new_end = remove_if({{container}}.begin(), {{container}}.end(), {{predicate}});"
+}

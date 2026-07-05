@@ -1,12 +1,11 @@
 {
-  "id": "algorithm-lower-bound",
-  "title": "lower_bound",
+  "id": "algorithm-upper-bound",
+  "title": "upper_bound",
   "category": "STL Algorithms (Binary Search)",
   "aliases": [
-    "lb",
-    "lower bound",
-    "binary search",
-    "first greater or equal",
+    "ub",
+    "upper bound",
+    "first strictly greater",
     "search"
   ],
   "inputs": [
@@ -27,5 +26,5 @@
       "default": "x"
     }
   ],
-  "template": "auto it = lower_bound({{container}}.begin(), {{container}}.end(), {{value}});"
+  "template": "auto it = upper_bound({{container}}.begin(), {{container}}.end(), {{value}});"
 }

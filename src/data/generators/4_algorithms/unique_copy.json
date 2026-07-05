@@ -1,0 +1,33 @@
+{
+  "id": "algorithm-unique-copy",
+  "title": "unique_copy",
+  "category": "STL Algorithms (Removal)",
+  "aliases": [
+    "unique_copy",
+    "copy unique consecutive",
+    "unique"
+  ],
+  "inputs": [
+    {
+      "id": "source",
+      "label": "Source Container",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "dest",
+      "label": "Destination Container/Iterator",
+      "type": "string",
+      "default": "res",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    }
+  ],
+  "template": "unique_copy({{source}}.begin(), {{source}}.end(), {{dest}}.begin());"
+}

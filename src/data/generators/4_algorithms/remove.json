@@ -1,13 +1,10 @@
 {
-  "id": "algorithm-lower-bound",
-  "title": "lower_bound",
-  "category": "STL Algorithms (Binary Search)",
+  "id": "algorithm-remove",
+  "title": "remove",
+  "category": "STL Algorithms (Removal)",
   "aliases": [
-    "lb",
-    "lower bound",
-    "binary search",
-    "first greater or equal",
-    "search"
+    "remove",
+    "shift matches out"
   ],
   "inputs": [
     {
@@ -22,10 +19,10 @@
     },
     {
       "id": "value",
-      "label": "Target Value",
+      "label": "Target Value to Remove",
       "type": "string",
       "default": "x"
     }
   ],
-  "template": "auto it = lower_bound({{container}}.begin(), {{container}}.end(), {{value}});"
+  "template": "auto new_end = remove({{container}}.begin(), {{container}}.end(), {{value}});"
 }

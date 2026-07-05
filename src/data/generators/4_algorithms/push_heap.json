@@ -1,0 +1,24 @@
+{
+  "id": "algorithm-push-heap",
+  "title": "push_heap",
+  "category": "STL Algorithms (Heap)",
+  "aliases": [
+    "heap",
+    "push_heap",
+    "priority queue",
+    "push heap"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    }
+  ],
+  "template": "push_heap({{container}}.begin(), {{container}}.end());"
+}

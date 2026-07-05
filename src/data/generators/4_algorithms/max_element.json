@@ -1,0 +1,23 @@
+{
+  "id": "algorithm-max-element",
+  "title": "max_element",
+  "category": "STL Algorithms (Min/Max)",
+  "aliases": [
+    "max_element",
+    "maximum index",
+    "largest element iterator"
+  ],
+  "inputs": [
+    {
+      "id": "container",
+      "label": "Container Variable",
+      "type": "string",
+      "default": "v",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    }
+  ],
+  "template": "auto it = max_element({{container}}.begin(), {{container}}.end());"
+}

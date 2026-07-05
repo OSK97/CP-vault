@@ -1,0 +1,42 @@
+{
+  "id": "algorithm-set-difference",
+  "title": "set_difference",
+  "category": "STL Algorithms (Merging)",
+  "aliases": [
+    "set_difference",
+    "difference math sorted"
+  ],
+  "inputs": [
+    {
+      "id": "c1",
+      "label": "Sorted Container A",
+      "type": "string",
+      "default": "v1",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "c2",
+      "label": "Sorted Container B",
+      "type": "string",
+      "default": "v2",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    },
+    {
+      "id": "dest",
+      "label": "Destination Container/Iterator",
+      "type": "string",
+      "default": "res",
+      "validation": {
+        "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+        "message": "Must be a valid C++ identifier"
+      }
+    }
+  ],
+  "template": "set_difference({{c1}}.begin(), {{c1}}.end(), {{c2}}.begin(), {{c2}}.end(), {{dest}}.begin());"
+}

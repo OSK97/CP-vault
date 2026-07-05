@@ -1,0 +1,24 @@
+{
+  "id": "algorithm-advance",
+  "title": "advance",
+  "category": "STL Algorithms (Ranges)",
+  "aliases": [
+    "advance",
+    "shift iterator"
+  ],
+  "inputs": [
+    {
+      "id": "iterator",
+      "label": "Iterator Variable",
+      "type": "string",
+      "default": "it"
+    },
+    {
+      "id": "shift",
+      "label": "Shift Distance",
+      "type": "string",
+      "default": "n"
+    }
+  ],
+  "template": "advance({{iterator}}, {{shift}});"
+}

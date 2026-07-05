@@ -1,12 +1,11 @@
 {
-  "id": "algorithm-lower-bound",
-  "title": "lower_bound",
+  "id": "algorithm-equal-range",
+  "title": "equal_range",
   "category": "STL Algorithms (Binary Search)",
   "aliases": [
-    "lb",
-    "lower bound",
+    "equal range",
+    "range match",
     "binary search",
-    "first greater or equal",
     "search"
   ],
   "inputs": [
@@ -27,5 +26,5 @@
       "default": "x"
     }
   ],
-  "template": "auto it = lower_bound({{container}}.begin(), {{container}}.end(), {{value}});"
+  "template": "auto [low, high] = equal_range({{container}}.begin(), {{container}}.end(), {{value}});"
 }
